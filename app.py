@@ -9,7 +9,8 @@ st.set_page_config(page_title="축제 & 주차 대시보드", layout="wide")
 st.title("📊 전국 문화축제 & 주차 인프라 분석 대시보드")
 st.markdown("전국의 축제 현황과 주차 시설 데이터를 비교 분석하여 인프라 격차를 파악합니다.")
 
-DB_PATH = 'festival_parking.db'
+import os
+DB_PATH = os.path.join(os.path.dirname(__file__), 'festival_parking.db')
 
 def run_query(query):
     if not os.path.exists(DB_PATH):
